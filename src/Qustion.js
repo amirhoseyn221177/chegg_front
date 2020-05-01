@@ -6,6 +6,7 @@ import axios from 'axios'
 
 var Question=(props)=>{
     const [question,setQuestion]=useState('')
+    
 
 
     var gettingQuestion=(e)=>{
@@ -19,6 +20,7 @@ var Question=(props)=>{
         const data = await axios.post('http://localhost:9000/question',obj)
         const resp=data.data
         console.log(resp)
+        console.log(resp.rawDoc)
     }
 
 
