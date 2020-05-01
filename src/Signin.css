@@ -1,7 +1,7 @@
 .input{
     position: relative;
-    left:45%;
-    top:400px;
+    left:44%;
+    top:350px;
 }
 
 
@@ -21,11 +21,11 @@
 }
 .button {
   position: relative;
-  top:430px;
-  left:47%;
+  top:400px;
+  left:46%;
   display: inline-flex;
   align-items: center;
-  background-color:rgba(235, 79, 79, 0.596);
+  background-color:rgb(240, 158, 8);
   color: white;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
   border-radius: 5px;
@@ -72,4 +72,9 @@
 }
 .pulse:hover:before, .pulse:hover:after {
   display: none;
+}
+
+.header{
+  color: orange;
+
 }

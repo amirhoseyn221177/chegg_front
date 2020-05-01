@@ -1,8 +1,12 @@
 import React, { useState, Fragment } from 'react'
-import {Button, Input} from '@material-ui/core'
+import {Input} from '@material-ui/core'
 import './Signin.css'
 import {withRouter} from 'react-router-dom'
-import axios from 'axios'
+import {connect} from 'react-redux'
+import {sendAuth} from './action'
+import chegg from  './chegglogo.jpeg'
+import Modal from './Modal'
+
 
 
 
@@ -10,6 +14,7 @@ import axios from 'axios'
 const SignIn=(props)=>{
     const [password , setpassword]=useState(null)
     const [username, setusername]=useState(null)
+    const [modal , setmodal]=useState(true)
 
     var getusername=(e)=>{
         let content=e.target.value
@@ -20,14 +25,20 @@ const SignIn=(props)=>{
         setpassword(content)
     }
 
-    var sendAuth=async()=>{
-        const resp= await axios.post('http://localhost:9000/signin',{username,password})
-        const data= resp.data
-        console.log(data)
+    var sendingAuthtoBackend=async()=>{
+        props.sendAuth(username,password)
+    }
+
+    var  closeModal=()=>{
+        setmodal(!modal)
     }
 
     return(
         <Fragment >
+            {modal ? <Modal close={closeModal} show={modal}> If you don't have an account just type your username and  password you will be logged in automatically </Modal>:null}
+            <h1 className='header'>
+                <img src={chegg} alt='' style={{position:'relative', top:'300px',left:'730px'}} />
+            </h1>
             <form>
             <div >
                 <Input onChange={getusername} className="input" placeholder="Username" required={true}/>
@@ -35,7 +46,7 @@ const SignIn=(props)=>{
             <div>
                 <Input onChange={getpassword} className="input" placeholder="Password" required={true}/>
             </div>
-            <button onClick={sendAuth} type='button' style={{color:'red'}}  className='button pulse'>
+            <button onClick={sendingAuthtoBackend} type='button' style={{color:'white'}}  className='button pulse'>
                 <span >
                 Sign-in
                 </span>
@@ -46,4 +57,13 @@ const SignIn=(props)=>{
     )
 }
 
-export default SignIn
+
+const maptoprops=dispatch=>{
+    return{
+        sendAuth:(username,password)=>dispatch(sendAuth(username,password))
+    }
+}
+
+
+
+export default connect(null,maptoprops)(withRouter(SignIn));
