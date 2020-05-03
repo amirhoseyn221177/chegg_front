@@ -1,6 +1,7 @@
 const initalstate={
     raw:null,
-    images:null
+    images:null,
+    token:null
 }
 
 
@@ -9,7 +10,8 @@ const reducer=(state=initalstate,action)=>{
         return{
             ...state,
             raw:action.raw,
-            images:action.images
+            images:action.images,
+            token:action.token
         }
     }
     return state
