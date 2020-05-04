@@ -95,25 +95,25 @@ const SignIn=(props)=>{
 
     return(
         <Fragment >
-            {errorLogin ? <p style={{color:'red', position:'absolute',fontSize:'small',top:'500px',left:'42%'}}>Username is not valid or password is wrong</p>:null}
-            {errorSignup ? <p style={{color:'red', position:'absolute',fontSize:'small',top:'500px',left:'44%'}}> This username is taken</p>:null}
+            {errorLogin ? <p className='error'>Username is not valid or password is wrong</p>:null}
+            {errorSignup ? <p className='error'> This username is taken</p>:null}
             {modal ? <Modal close={closeModal} show={modal}> If you don't have an account just type your username and  password you will be logged in automatically </Modal>:null}
             <h1 className='header'>
-                <img src={chegg} alt='' style={{position:'relative', top:'300px',left:'760px'}} />
+                <img src={chegg} alt='' className='image' />
             </h1>
             <form>
             <div >
-                <Input type='text' onChange={getusername} className="input" placeholder="Username" required={true}/>
+                <Input type='text' onChange={getusername} className='input' placeholder="Username" required={true}/>
             </div>
             <div>
                 <Input type='password' onChange={getpassword} className="input" placeholder="Password" required={true}/>
             </div>
-            <button style={{left:'1000px',color:'white'}} onClick={sendingAuthtoBackend} type='button'   className='button pulse'>
+            <button style={{color:'white'}} onClick={sendingAuthtoBackend} type='button'   className='button1 pulse'>
                 <span >
                 Sign-in
                 </span>
             </button>
-            <button onClick={SignUP} type='button' style={{left:'670px'}} className='button pulse'>
+            <button onClick={SignUP} type='button'  className='button2 pulse'>
                 <span>
                     sign-up
                 </span>

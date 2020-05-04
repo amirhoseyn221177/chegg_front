@@ -96,7 +96,11 @@ var Question=(props)=>{
         )
     }else if(rawDoc){
         render=(
-            <div style={{position:'absolute',top:'65%',left:'30%'}}>{ReactHtmlParser(rawDoc)}</div>
+            <Fragment>
+               <div className='hr'/>
+                <h1 className='answer'>Answers</h1>
+                <div className='answerimage'>{ReactHtmlParser(rawDoc)}</div>
+            </Fragment>
         )
     }
     
@@ -109,15 +113,11 @@ var Question=(props)=>{
             {error ?  <UNAUTHORIZED/>:
             <div>
                   <h1 className='header'>
-                <img src={chegg} alt='' style={{position:'absolute', top:'100px',left:'40%'}} />
+                <img src={chegg} alt='' className='qimage'/>
             </h1>
-                {/* <div style={{position:'relative'}}>{jsx}</div> */}
-                <Input style={{width:'500px',top:'350px',position:'absolute', left:'38%'}} placeholder="Please paste your question here!" onChange={gettingQuestion}/>
-                <button style={{top:'55%', position:'absolute',left:'48%'}} className='button pulse' onClick={sendingQuestion}>Submit</button>
+                <Input className='qinput' placeholder="Please paste your question here!" onChange={gettingQuestion}/>
+                <button  className='button3 pulse' onClick={sendingQuestion}>Submit</button>
                 {render}
-             {/* {spinner ?<div className={classes.root}><LinearProgress variant='query' style={{width:'700px', position:'absolute', top:'70%',left:'33%'}}  /></div>  :
-             <div style={{position:'absolute',top:'65%',left:'30%'}}>{ReactHtmlParser(rawDoc)}</div> */}
-            }
             </div>}
         </Fragment>
     )

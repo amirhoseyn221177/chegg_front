@@ -1,8 +1,17 @@
 .input{
-    position: relative;
-    left:44%;
-    top:350px;
+    position: absolute;
+    left:45%;
+    top:450px;
 }
+
+.qinput{
+  width:500px;
+  top:350px;
+  position:absolute;
+  left:38%
+}
+
+
 
 
 @keyframes pulse {
@@ -19,16 +28,16 @@
     opacity: 0;
   }
 }
-.button {
-  position: relative;
-  top:400px;
-  left:46%;
+.button1 {
+  position: absolute;
+  top:500px;
+  left:42%;
   display: inline-flex;
   align-items: center;
   background-color:rgb(240, 158, 8);
   color: white;
   box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
+  border-radius: 50px;
   height: 45px;
   padding: 0 30px;
   font-family: Lato, Arial, sans-serif;
@@ -37,12 +46,13 @@
   transition: background .3s, transform .3s, box-shadow .3s;
   will-change: transform;
 }
-.button:hover {
+
+.button1:hover {
   background: rgb(0, 0, 0);
   box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
   transform: translate3d(0, -2px, 0);
 }
-.button:active {
+.button1:active {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
   transform: translate3d(0, 1px, 0);
 }
@@ -78,3 +88,137 @@
   color: orange;
 
 }
+
+.button2 {
+  position: relative;
+  top:500px;
+  left:46%;
+  display: inline-flex;
+  align-items: center;
+  background-color:rgb(240, 158, 8);
+  color: white;
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  height: 45px;
+  padding: 0 30px;
+  font-family: Lato, Arial, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .3s, transform .3s, box-shadow .3s;
+  will-change: transform;
+}
+
+.button2:hover {
+  background: rgb(0, 0, 0);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
+  transform: translate3d(0, -2px, 0);
+}
+.button2:active {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, 1px, 0);
+}
+.button3 {
+  position: absolute;
+  top:58%;
+  left:48%;
+  display: inline-flex;
+  align-items: center;
+  background-color:rgb(240, 158, 8);
+  color: white;
+  box-shadow: 0 3px 2px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  height: 45px;
+  padding: 0 30px;
+  font-family: Lato, Arial, sans-serif;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background .3s, transform .3s, box-shadow .3s;
+  will-change: transform;
+}
+
+.button3:hover {
+  background: rgb(0, 0, 0);
+  box-shadow: 0 4px 17px rgba(0, 0, 0, 0.2);
+  transform: translate3d(0, -2px, 0);
+}
+.button3:active {
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  transform: translate3d(0, 1px, 0);
+}
+.image{
+  position: absolute;;
+   top:250px;
+   left: 760px; 
+}
+.qimage{
+  position:absolute;
+  top:100px;
+  left:40%;
+}
+
+.error{
+  color:red;
+   position:absolute;
+   font-size:small;
+   top:430px;
+   left:44%
+}
+.hr{
+  position: relative;
+  display: block;
+  border: 5px dashed orange;
+  width: 100%;
+  top: 550px;
+  z-index: 100;
+}
+.answer{
+  color: black;
+  position: absolute;
+  top:600px;
+  left: 900px;
+  z-index: 100;
+}
+
+.answerimage{
+  position:absolute;
+  top:90%;
+  left:20%;
+}
+@media(max-width:500px){
+  .input{
+    left:130px;
+    top: 350px;
+  }
+  .button1{
+    left:20%;
+    top: 400px;
+  }
+  .button2{
+    left: 30%;
+    top: 400px;
+  }
+  .image{
+    width: 250px;
+    left: 100px;
+    top: 230px;
+  }
+  .error{
+    top: 330px;
+    left: 100px;
+  }
+  .qinput{
+    width: 280px;
+    left: 80px;
+    top: 220px;
+  }
+  .qimage{
+    width:250px;
+    left: 100px;
+
+  }
+  .button3{
+    top: 300px;
+    left: 160px;
+  }
+}
+
